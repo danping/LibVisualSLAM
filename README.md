@@ -6,6 +6,8 @@ System requirements
 -------------
 
 * Linux Unbuntu or Linux Mint (64 bit). 
+* OpenCV
+* libatlas-dev
 
 
 Download & Installation
