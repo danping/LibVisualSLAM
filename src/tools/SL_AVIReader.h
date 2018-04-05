@@ -14,7 +14,11 @@
 class AVIReader:public VideoReader {
 protected:
 	uint32_t _timestamp;
+#if(CV_MAJOR_VERSION <= 2)    
 	CvCapture* videoCap;
+#else
+    cv::VideoCapture videoCap;
+#endif
 public:
 	std::string filePath;
 public:

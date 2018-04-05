@@ -12,7 +12,11 @@
 
 class USBCamReader:public VideoReader {
 protected:
+#if(CV_MAJOR_VERSION <= 2)
 	CvCapture* videoCap;
+#else
+    cv::VideoCapture videoCap;
+#endif
 	TimeMeasurer _tm;
 	uint32_t _timstamp; 
 public:

@@ -5,6 +5,7 @@ cmake_minimum_required(VERSION 2.8)
 set (libVisualSLAM_VERSION_MAJOR 1)
 set (libVisualSLAM_VERSION_MINOR 0)
 
+find_package(OpenCV REQUIRED)
 
 aux_source_directory(src SRC)
 aux_source_directory(src/calibration SRC_CALIBRATION)
@@ -24,7 +25,7 @@ aux_source_directory(src/math SRC_MATH)
 aux_source_directory(src/tools SRC_TOOLS)
 aux_source_directory(src/util SRC_UTIL)
 
-
+include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(src)
 
 add_library(VisualSLAM ${SRC} ${SRC_CALIBRATION} ${SRC_EXTERN} ${SRC_SBA} ${SRC_CSPARSE} ${SRC_LEVMAR} ${SRC_GEOMETRY} ${SRC_IMGPROC} ${SRC_LAP} ${SRC_MATCHING} ${SRC_MATH} ${SRC_TOOLS} ${SRC_UTIL})
